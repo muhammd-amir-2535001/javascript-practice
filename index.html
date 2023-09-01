@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task_no_one</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //                  Task no one
+    //write a JavaScript function that finds two numbers in the given arr
+    //whose sum is equal to the target value. If such numbers are found,
+    //the function will return an arr containing the indices of those two numbers;
+    //otherwise, it will return null.
+//     function find_indices_to_replace(arr, targetValue){
+
+//         // Use a obj to store the complement of each element
+
+//         const myObj = {}; 
+
+//    for(let i = 0; i < arr.length; i++){
+
+//     let currentElement = arr[i];
+//     let complement = targetValue - currentElement;
+    
+//     if (myObj [complement] !== undefined){
+
+//       // We found a pair of numbers whose sum equals the target value
+//       return [myObj[complement], i];
+//     }
+    
+//     myObj[currentElement] = i; 
+//     // Store the current element's index in the hashMap
+//   }
+  
+//   return null; // If no pair is found, return null
+// }
+
+// // Example usage:
+// let arr = [1, 2, 4, 5, 6];
+// let target_value = 8;
+// let result = find_indices_to_replace(arr, targetValue);
+// console.log(result);
+//  // Output: [1, 2] (because arr[1] + arr[2] = 2 + 4 = 6, which is the target_value)
+
+// //  In this code, we use a myObj to store the index 
+// //  of each element as we iterate through the array. 
+// //  While iterating, we check if the complement of 
+// //  the current element exists in the myObjy. If it does,
+// // it means we have found a pair of elements whose sum is equal to
+// // the target value, and we return their indices. 
+// // If no such pair is found after iterating through the entire array,
+// // we return null.
+
+//A simplified version of the JavaScript function
+
+// function find_indices_to_replace(array, target_value) {
+
+//   for (let i = 0; i < array.length - 1; i++) {
+
+//     for (let j = i + 1; j < array.length; j++) {
+
+//       if (array[i] + array[j] === target_value) {
+
+//         return [i, j];
+//       }
+//     }
+//   }
+//   return null;
+// }
+
+// // Example usage:
+// let array = [4, 4, 4, 4];
+// let target_value = 8;
+// let result = find_indices_to_replace(array, target_value);
+// console.log(result); 
+// Output: [1, 2] (because array[1] + array[2] = 2 + 4 = 6, which is the target_value)
+
+// In this version, we use two nested loops to compare each pair of elements 
+// in the array. If we find a pair whose sum equals the target value,
+// we return their indices.If no such pair is found, we return null.
+ 
+//you have a set of toys (the array) and your friend gives you a number (the target value).
+// Your task is to find two toys in the set whose combined happiness level (sum) matches 
+//the number your friend gave you. If you succeed, you'll return the positions of those two 
+//toys in the set; otherwise, you'll return "I can't find a matching pair."
+
+//Now, let's explain the code:
+
+//js
+//Copy code
+/*function find_indices_to_replace(array, target_value) {
+  // Here we define a function named find_indices_to_replace that takes two parameters:
+  // "array" - this is our set of toys (array of numbers).
+  // "target_value" - this is the happiness level (sum) we want to find in the toys.
+
+  for (let i = 0; i < array.length - 1; i++) {
+    // We start by looking at each toy one by one (represented by i).
+    // We use a loop (for) to go through each toy in the set (array).
+    // We stop at the second-to-last toy (array.length - 1), so we have another toy to compare with.
+
+    for (let j = i + 1; j < array.length; j++) {
+      // Inside the first loop, we have another loop (for) represented by j.
+      // This loop starts from the toy immediately after the current toy (i + 1)
+      // and goes through the remaining toys in the set.
+
+      if (array[i] + array[j] === target_value) {
+        // Here we check if the happiness level of the current toy (array[i])
+        // added to the happiness level of the other toy (array[j])
+        // is equal to the target_value (the sum your friend wants).
+
+        // If we find two toys whose happiness levels add up to the target value,
+        // we return their positions (indices) in the set as an array [i, j].
+        return [i, j];
+      }
+    }
+  }
+
+  // If we finish both loops without finding a matching pair of toys,
+  // we return "I can't find a matching pair" by returning null.
+  return null;
+}
+
+// Example usage:
+let array = [1, 2, 4, 5, 6];
+let target_value = 8;
+let result = find_indices_to_replace(array, target_value);
+console.log(result); 
+// Output: [1, 2] (because array[1] + array[2] = 2 + 4 = 6, which is the target_value)
+
+// So, the function works like a little toy matching game.
+// It compares each toy's happiness level with every other toy's 
+// happiness level to see if any pair adds up to the target value. 
+// If it finds a match, it happily tells you the positions of those toys
+// in the set. If not, it admits that it couldn't find a matching pair.
+*/ 
+    //task 2
+// If you want to find all possible pairs of numbers in
+// the array that add up to the target value, you can modify the
+// function accordingly. 
+// Here's the updated code to find all such pairs: 
+
+ function find_indices_to_replace(array, target_value) {
+  const result = [];
+
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target_value) {
+        result.push([i, j]);
+      }
+    }
+  }
+
+  return result.length ? result : null;
+}
+
+// Example usage:
+let array = [6, 2, 4, 5, 1];
+let target_value = 6;
+let result = find_indices_to_replace(array, target_value);
+console.log(result);
+// Output: [[1, 2], [3, 4]] (array[1] + array[2] = 2 + 4 = 6, 
+//and array[3] + array[4] = 5 + 6 = 11, both are equal to the target_value)
+    
+// In this updated function, we create an empty result array to store the indices
+// of all pairs that satisfy the condition. If we find a pair whose sum equals the target 
+// value, we push their indices into the result array. After finishing both loops, 
+// we check if the result array is empty. If it is, we return null to indicate that no matching pairs were found; 
+//otherwise, we return the result array with all the pairs.    
+</script>
+</html>

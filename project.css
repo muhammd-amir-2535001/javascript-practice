@@ -1,0 +1,54 @@
+/* CSS styles (styles.css) */
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+}
+
+.key {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+kbd {
+    font-weight: bold;
+}
+
+.sound {
+    font-size: 14px;
+    color: #777;
+}
+
+.playing {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ffc600;
+    border-color: #ffc600;
+}
+
+/* Optional: Add hover effect */
+.key:hover {
+    background-color: #f0f0f0;
+}
+
+/* Optional: Add active effect when clicked */
+.key:active {
+    background-color: #ccc;
+}

@@ -1,0 +1,86 @@
+/* Reset default styles */
+/* ڈیفالٹ اسٹائلز کو ری سیٹ کریں */
+
+ *{
+    background:#138d15 url(http://7-themes.com/data_images/out/52/6948810-wood-background-pictures-free-download.jpg);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Set styles all body Tag */
+
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+  
+  /* Parent container for the clock */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+  .date-and-year{
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      /* flex-direction: column; */
+  }
+  
+  /* Clock body all styles */
+  .clock_body{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Clock face styles */
+  .clock_face {
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  /* Clock hand three class styles */
+  .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+  }
+  /* hour ki class ki style karh h */
+  .hour {
+    width: 4px;
+    height: 60px;
+    background-color: #333;
+    border-radius: 4px;
+  }
+  /* mints ki class ki styleing karh h */
+  .mint {
+    width: 2px;
+    height: 80px;
+    background-color: #555;
+    border-radius: 2px;
+  }
+  /* ya second ki class ko style karh h */
+  .second {
+    width: 1px;
+    height: 90px;
+    background-color: red;
+  }
+ 
+    
+    
+    
