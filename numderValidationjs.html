@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  please enter your number <br/>
+  <input type="text" name="" onkeyup="val(this)">
+  <div id="res"></div>
+</body>
+<script type="text/javascript">
+    document.getElementById("res").style.color=
+    "red";
+    function val(elem){
+        // document.getElementById("res")
+        // .innerText=elem.value;
+        // elem.value;
+        isNaN // not a number ?
+        //logic for validation
+        if(isNaN(elem.value)){
+            // this errer for number
+           document.getElementById("res").innerText = 
+           "please enter numbers only";
+        }else{
+
+            document.getElementById("res").innerText ="";
+            //this ereor for > 11 number
+
+            if(elem.value.length > 11){
+            document.getElementById("res").innerText=
+            "please enter number only eleven digits";
+        }
+        else{
+           document.getElementById("res").innerText="";
+        }
+
+        }
+    
+    }
+
+</script>
+</html>
