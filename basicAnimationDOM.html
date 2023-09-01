@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+    <title>usingJsDOMAnimation</title>
+    <style type="text/css">
+        .yellow{
+           width:500px;
+           height:500px;
+           background: blue;
+           position:relative; 
+           margin-top: 5px;
+        }
+        #red{
+            height:100px;
+            width:100px;
+            background:black;
+            position:absolute;
+            top:400px;
+            left:400px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="move()">click Me</button>
+  <div class="yellow">
+    <div id="red"></div>  
+</body>
+<script type="text/javascript">
+    function move(){
+        var redElement = document.getElementById('red');
+        var poe = 0;
+        var anim = setInterval(animate,5);
+        function animate(){
+            if(poe==400){
+                clearInterval(anim)
+            }else{
+            poe++;
+            redElement.style.top = poe+"px";
+            redElement.style.left = poe+"px";
+            }
+        }
+
+
+    }
+</script>
+</html>
